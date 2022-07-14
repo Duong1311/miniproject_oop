@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="507.0" prefWidth="555.0" style="-fx-border-color: AQUA; -fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.addVertexController">
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+   </padding>
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Click any where in there pane to create a Vertex." />
+      <Button layoutX="488.0" layoutY="468.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="53.0" text="Done" />
+   </children>
+</AnchorPane>
