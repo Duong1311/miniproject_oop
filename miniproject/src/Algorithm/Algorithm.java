@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import Graph.Edge;
 import Graph.Graph;
 import Graph.Vertex;
 import MyDate.MyDate;
@@ -12,8 +13,21 @@ import Step.step.*;
 public abstract class Algorithm {
 	
 	protected Graph graph = new Graph();
-	protected static List<DetailStep>  detailStep = new ArrayList<DetailStep>();
-	protected static List<PseudoStep>  pseudoStep = new ArrayList<PseudoStep>();
+	static List<DetailStep>  detailStep = new ArrayList<DetailStep>();
+	static List<PseudoStep>  pseudoStep = new ArrayList<PseudoStep>();
+	
+	List<PseudoStep>  PseudoList = new ArrayList<PseudoStep>();
+	static int size=0;
+	public int getSize() {
+			return size;
+		}
+
+
+	public void setSize(int size) {
+			this.size = size;
+		}
+	
+	
 	
 	public MyDate setDate(MyDate date) {
 		// TODO Auto-generated method stub
@@ -43,6 +57,14 @@ public abstract class Algorithm {
 		this.graph = graph;
 	}
 	public abstract Stack<Stack<Vertex>> getSCC();
+
+	public List<PseudoStep> getPseudoList() {
+		return PseudoList;
+	}
+
 	
+
+
+
 	
 }

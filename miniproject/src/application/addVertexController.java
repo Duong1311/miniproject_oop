@@ -40,7 +40,7 @@ public class addVertexController extends Controller{
 	        	id++;
 	        	a.getChildren().add(button);
 	        	
-	            System.out.println("add button "+button.getText()+"\n" +e.getSceneX()+" "+e.getSceneY()+" Vertex " + graph.getListVertex().get(id-1).getId());
+	           
 	          }
 
 			private Button addButton(Scene scene, double sceneX, double sceneY,int id) {
@@ -49,11 +49,13 @@ public class addVertexController extends Controller{
 				button.setLayoutX(sceneX);
 				button.setLayoutY(sceneY);
 				button.setStyle(
-						"-fx-background-radius: 15em; " +
-					            "-fx-min-width: 30px; " +
-					            "-fx-min-height: 30px; " +
-					            "-fx-max-width: 30px; " +
-					            "-fx-max-height: 30px;"
+			            "-fx-background-radius: 15em; " +
+			            "-fx-min-width: 30px; " +
+			            "-fx-min-height: 30px; " +
+			            "-fx-max-width: 30px; " +
+			            "-fx-max-height: 30px;" +
+			            "-fx-text-fill: red;"+
+			            "-fx-background-color: cyan; "
 			    );
 				return button;
 				

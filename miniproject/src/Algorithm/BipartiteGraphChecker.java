@@ -9,7 +9,9 @@ import java.util.Stack;
 
 import Graph.Graph;
 import Graph.Vertex;
+import Step.step.DetailStep;
 import Step.step.PseudoStep;
+import Step.step.TimeLife;
 
 public class BipartiteGraphChecker extends Algorithm {
 	Scanner keyboard = new Scanner(System.in);
@@ -18,6 +20,7 @@ public class BipartiteGraphChecker extends Algorithm {
 	List<PseudoStep>  BGCPseudoList = new ArrayList<PseudoStep>();
 	static int stepID = 0;
 	public BipartiteGraphChecker() {
+	
 		BGCPseudoListAdd(0," For each unvisited vertex u");
     	BGCPseudoListAdd(1," DFS (u)"); 
     	BGCPseudoListAdd(2," For each neighbor v of u"); 

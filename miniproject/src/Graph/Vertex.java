@@ -1,5 +1,8 @@
 	package Graph;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.scene.control.Button;
 
 public class Vertex {
@@ -8,11 +11,32 @@ public class Vertex {
 	Button button = new Button();
 	private int id;
 	private String label;
-	public Vertex() {}
+	boolean completed;
+	public boolean isCompleted() {
+		return completed;
+	}
+
+	public void setCompleted(boolean completed) {
+		this.completed = completed;
+	}
+
+	List<Integer> state = new ArrayList<Integer>(); 
+	
+	public List<Integer> getState() {
+		return state;
+	}
+	
+	public Vertex()
+	{
+		state.add(0,1);
+	}
+	
+	
 	public Vertex(int id,String label)
 	{
 		this.setLabel(Integer.toString(id)); 
 		this.setId(id);
+		state.add(0,1);
 	}
 	public Vertex(int id,String label,double x,double y,Button button)
 	{
@@ -21,6 +45,7 @@ public class Vertex {
 		this.setLabel(Integer.toString(id)); 
 		this.setId(id);
 		this.setButton(button);
+		state.add(0,1);
 	}
 	
 	public double getGuiX() {

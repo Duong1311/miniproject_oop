@@ -43,6 +43,48 @@ public class Graph {
 		return -1;
 	}
 	
+	public void addStateVertex(int size, int temp, int v,int option1, int option2)
+	{	
+		for(int i =0;i< getListVertex().size();i++)
+		{	
+			
+			int temp2=findVertex(i).getState().get(size-1);
+			findVertex(i).getState().add(size, temp2);
+			if(findVertex(temp)==findVertex(i))
+				findVertex(i).getState().add(size, option1);
+			if(findVertex(v)==findVertex(i))
+				findVertex(i).getState().add(size, option2);
+		}
+	}
+	public void addStateVertex(int size, int temp,int option1)
+	{	
+		for(int i =0;i< getListVertex().size();i++)
+		{	
+			
+			int temp2=findVertex(i).getState().get(size-1);
+			findVertex(i).getState().add(size, temp2);
+			if(findVertex(temp)==findVertex(i))
+				findVertex(i).getState().add(size, option1);
+	
+		}
+	}
+	public void addStateEdge(int size, Edge e,int option)
+	{
+		for(int i =0;i< getListEdge().size();i++)
+		{	
+			
+			int temp = getListEdge().get(i).getState().get(size-1);
+			getListEdge().get(i).getState().add(size, temp);
+			if(e!=null)
+			if(findEdge(e.getFrom().getId(),e.getTo().getId())==getListEdge().get(i)) {
+				getListEdge().get(i).getState().add(size, option);
+			}
+		}
+	}
+	
+	
+	
+	
 	
 	public Vertex getVertex(int id) {
 		for(int i=0;i<listOfVertex.size();i++)
@@ -92,7 +134,16 @@ public class Graph {
 				return true;
 		return false;
 	}
-	
+	public Edge findEdge(int id, int id2) {
+		if(hasEdge(id,id2)==true) {
+			for(int i=0;i< listOfEdge.size();i++) {
+				if(listOfEdge.get(i).getFrom().getId()==id
+						&& listOfEdge.get(i).getTo().getId()==id2)
+					return listOfEdge.get(i);
+			}
+		}
+		return null;
+	}
 
 	public List<Vertex> VertexKe(int id) {
 		List<Vertex> l = new ArrayList<Vertex>();
@@ -188,6 +239,7 @@ public class Graph {
 	public void setDirected(boolean directed) {
 		this.directed = directed;
 	}
+	
 
 
 }

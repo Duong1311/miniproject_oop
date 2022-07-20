@@ -1,29 +1,19 @@
 package application;
 
-
-
 import java.io.IOException;
 import java.util.List;
 
 import Algorithm.Algorithm;
-import Algorithm.TopoSortDFS;
+import Algorithm.BipartiteGraphChecker;
 import Graph.Edge;
 import Graph.Vertex;
 import Step.step.PseudoStep;
-import Step.step.TimeLife;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 
-
-
-
-public class TopoSortController extends Controller{
+public class BipartiteGraphCheckerController extends Controller{
 	@FXML
-	Algorithm algorithm=new TopoSortDFS();
-	
+	Algorithm algorithm=new BipartiteGraphChecker();
 	public Label L0=new Label();
 	public Label L1=new Label();
 	public Label L2=new Label();
@@ -36,7 +26,6 @@ public class TopoSortController extends Controller{
 	int  tempInt=0;
 	Vertex tempVertex = new Vertex();
 	Edge tempEdge = new Edge();
-
 	
 	List<PseudoStep> pseudoStep= algorithm.getPseudoStep();
 	List<PseudoStep> pseudoList= algorithm.getPseudoList();
@@ -183,5 +172,7 @@ public class TopoSortController extends Controller{
 		public void setAlgorithm(Algorithm algorithm) {
 			this.algorithm = algorithm;
 		}
+
+
 
 }

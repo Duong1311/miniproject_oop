@@ -13,8 +13,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 public class addEdgeController extends Controller{
@@ -84,7 +82,7 @@ public class addEdgeController extends Controller{
 	     				graph.addEdge(from,to);
 	     				addLine(root,graph.getListEdge().get(graph.getListEdge().size()-1));
 	     			}
-	     			System.out.println(graph.getListEdge().size());
+	     			
 		        
 	     			}
 	     		

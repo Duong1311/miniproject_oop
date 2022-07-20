@@ -1,5 +1,11 @@
 package Graph;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import Step.step.DetailStep;
+import javafx.scene.shape.Line;
+
 public class Edge {
 	
 	
@@ -7,14 +13,30 @@ public class Edge {
 	private Vertex to;
 	private String label;
 	private int weight;
+	private Line line= new Line(); 
+	List<Integer> state = new ArrayList<Integer>(); 
 	
+	public List<Integer> getState() {
+		return state;
+	}
+	public Line getLine() {
+		return line;
+	}
+
+	public void setLine(Line line) {
+		this.line = line;
+	}
+
 	public Edge( Vertex from,Vertex to) {
 		this.setFrom(from);
 		this.setTo(to);
+		this.setWeight(1);
+		state.add(0,0);
 	}
 	
 	public Edge() {
 		weight=1;
+		state.add(0,0);
 	}
 	
 	
@@ -44,6 +66,8 @@ public class Edge {
 	public void setTo(Vertex to) {
 		this.to = to;
 	}
+
+	 
 	
 	
 }

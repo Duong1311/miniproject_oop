@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minWidth="200.0" prefHeight="507.0" prefWidth="555.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BipartiteGraphCheckerController">
+   <children>
+      <Button layoutX="116.0" layoutY="468.0" mnemonicParsing="false" onAction="#next" prefHeight="25.0" prefWidth="42.0" text="Next" />
+      <Button layoutX="63.0" layoutY="468.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="42.0" text="Back" />
+      <Button layoutX="170.0" layoutY="468.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="42.0" text="Exit" />
+      <Label fx:id="L0" layoutX="28.0" layoutY="26.0" minWidth="200.0" prefHeight="18.0" prefWidth="216.0" style="-fx-background-color: LAVENDER; -fx-text-fill: BLUE;" text="For each unvisited vertex u" textFill="#141314" />
+      <Label fx:id="L1" layoutX="28.0" layoutY="43.0" minWidth="200.0" prefHeight="18.0" prefWidth="216.0" style="-fx-background-color: LAVENDER; -fx-text-fill: BLUE;" text="      DFS (u)" textFill="#141314" />
+      <Label fx:id="L2" layoutX="28.0" layoutY="60.0" minWidth="200.0" prefHeight="18.0" prefWidth="216.0" style="-fx-background-color: LAVENDER; -fx-text-fill: BLUE;" text="For each neighbor v of u" textFill="#141314" />
+      <Label fx:id="L3" layoutX="28.0" layoutY="77.0" minWidth="200.0" prefHeight="18.0" prefWidth="216.0" style="-fx-background-color: LAVENDER; -fx-text-fill: BLUE;" text="      If v is unvisited, different color" textFill="#141314" />
+      <Label fx:id="L4" layoutX="28.0" layoutY="94.0" minWidth="200.0" prefHeight="18.0" prefWidth="216.0" style="-fx-background-color: LAVENDER; -fx-text-fill: BLUE;" text="            DFS (v)" textFill="#141314" />
+      <Label fx:id="L5" layoutX="28.0" layoutY="111.0" minWidth="200.0" prefHeight="18.0" prefWidth="216.0" style="-fx-background-color: LAVENDER; -fx-text-fill: BLUE;" text="      Else if u and v have the same color" textFill="#141314" />
+      <Label fx:id="L6" layoutX="28.0" layoutY="128.0" minWidth="200.0" prefHeight="18.0" prefWidth="216.0" style="-fx-background-color: LAVENDER; -fx-text-fill: BLUE;" text="Not bipartite graph, exit." textFill="#141314" />
+      <Label fx:id="detail" layoutX="285.0" layoutY="35.0" text="Detail" textFill="#a41c1c" />
+      <Label layoutX="285.0" layoutY="18.0" text="Detail" textFill="#132c90">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      
+   </children>
+</AnchorPane>
