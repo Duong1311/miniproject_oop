@@ -17,6 +17,7 @@ public class BipartiteGraphChecker extends Algorithm {
 	Scanner keyboard = new Scanner(System.in);
 	String str = new String();
 	String s2 = new String();
+	int x =2;
 	List<PseudoStep>  BGCPseudoList = new ArrayList<PseudoStep>();
 	static int stepID = 0;
 	public BipartiteGraphChecker() {
@@ -43,33 +44,43 @@ public class BipartiteGraphChecker extends Algorithm {
 		return PS;
 	}
 	 boolean isBipartite(Graph gr,int id, boolean visited[],int color[]) {
-		Vertex i;
-		
-		Iterator<Vertex> it = gr.VertexKe(id).iterator();// for each neighbor v of u
-		while (it.hasNext()) {  
-			i = it.next();
-			str = " Try " + id + "->" + i.getId();
-			pseudoStep.add(StepGenerate(2,str));
-		if (!visited[i.getId()]) {//Try egde u->v 
-			str = " Give vertex " + i.getId()  +" different color from vertex "+id ;
-			pseudoStep.add(StepGenerate(3,str));
-			visited[i.getId()]=true;
-			color[i.getId()]=	1 - color[id];//give color v different color u
-			str = " DFS(" + i.getId() +")";
-			pseudoStep.add(StepGenerate(4,str));
-			if(!isBipartite(gr,i.getId(), visited, color))   // DFS(v)
+			Vertex i;
+			
+			Iterator<Vertex> it = gr.VertexKe(id).iterator();// for each neighbor v of u
+			while (it.hasNext()) {  
+				i = it.next();
+				str = " Try " + id + "->" + i.getId();
+				pseudoStep.add(size,StepGenerate(2,str));
+				graph.addStateEdge(size+1,graph.findEdge(id, i.getId()),1);
+				graph.addStateVertex(size++ +1, id, 0);
+				//graph.addStateEdge(size+1,null,0);
+			if (!visited[i.getId()]) {//Try egde u->v 
+				x=-x;
+				str = " Give vertex " + i.getId()  +" different color from vertex "+id ;
+				pseudoStep.add(size,StepGenerate(3,str));
+				graph.addStateEdge(size+1,null,0);
+				
+				graph.addStateVertex(size++ +1, i.getId(), x);
+				visited[i.getId()]=true;
+				color[i.getId()]=	1 - color[id];//give color v different color u
+				str = " DFS(" + i.getId() +")";
+				pseudoStep.add(size,StepGenerate(4,str));
+				graph.addStateEdge(size+1,null,0);
+				graph.addStateVertex(size++ +1, i.getId(), x);
+				if(!isBipartite(gr,i.getId(), visited, color))   // DFS(v)
+					return false;
+				}
+			else if(color[id]==color[i.getId()]) { //u and v same color
+				str = "Vertex " + id + "and vertex "+ i.getId()+"have the same color.";
+				pseudoStep.add(size,StepGenerate(5,str));
+				graph.addStateEdge(size+1,null,0);
+				graph.addStateVertex(size++ +1, id,0);
 				return false;
-			}
-		else if(color[id]==color[i.getId()]) { //u and v same color
-			str = "Vertex " + id + "and vertex "+ i.getId()+"have the same color.";
-			pseudoStep.add(StepGenerate(5,str));
-			return false;
-			}
-		//else continue
-		}
+				}
 		
-		return true;
-	}
+			}  
+			return true;
+		}
 
 
 	@Override
@@ -83,20 +94,28 @@ public class BipartiteGraphChecker extends Algorithm {
 	     //System.out.println("Input Id Vertex start :");
 	     //int b = keyboard.nextInt();
 	     str=" Vertex 0 is not visited";
-	     pseudoStep.add(StepGenerate(0,str));
+	     pseudoStep.add(size,StepGenerate(0,str));
+	     graph.addStateEdge(size+1,null,0);
+		 graph.addStateVertex(size++ +1, 0, x);
 	     str=" DFS(0)";
-	     pseudoStep.add(StepGenerate(1,str));
-	     
+	     pseudoStep.add(size,StepGenerate(1,str));
+	     graph.addStateEdge(size+1,null,0);
+		 graph.addStateVertex(size++ +1, 0, x);
 	     visited[0]=true;
 		 color[0]=0;
+		 //graph.addStateEdge(size+1,null,0);
 	     if(isBipartite(graph,0,visited,color)) {
 	    	 //System.out.print("This is a bipartite graph!\n");
 	    	 str=" This is a bipartite graph!\n";
-		     pseudoStep.add(StepGenerate(6,str));
+		     pseudoStep.add(size,StepGenerate(6,str));
+		     graph.addStateEdge(size+1,null,0);
+			 graph.addStateVertex(size++ +1,0,0);
 	     }
 	     else {//System.out.print("This is not a bipartite graph!\n");
 	    	 str=" This is not a bipartite graph!\n";
-		     pseudoStep.add(StepGenerate(7,str));
+		     pseudoStep.add(size,StepGenerate(7,str));
+		     graph.addStateEdge(size+1,null,0);
+			 graph.addStateVertex(size++ +1,0,0);
 	     }	
 	}
 
