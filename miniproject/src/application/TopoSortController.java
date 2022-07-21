@@ -72,7 +72,7 @@ public class TopoSortController extends Controller{
 			tempEdge=graph.getListEdge().get(j);
 			changeColor(tempEdge.getLine(),tempEdge.getState().get(tempInt+1));
 		}
-		System.out.print("\n");
+		
 		for(int j = 0 ; j<pseudoList.size();j++)
 			if(pseudoStep.get(tempInt).getString().equals(pseudoList.get(j).getString()))
 			{
@@ -123,8 +123,7 @@ public class TopoSortController extends Controller{
 				resetColor(tempLabel);
 				backConfig(tempInt);
 				detail.setText(pseudoStep.get(tempInt).getDetailStep().getString());
-				System.out.println(pseudoStep.get(tempInt).getString());
-				System.out.println(pseudoStep.get(tempInt).getDetailStep().getString());
+				
 			}
 		else tempInt+=1;
 		}
@@ -138,7 +137,7 @@ public class TopoSortController extends Controller{
 			tempEdge=graph.getListEdge().get(j);
 			changeColor(tempEdge.getLine(),tempEdge.getState().get(tempInt+1));
 		}
-		System.out.print("\n");
+	
 		for(int j = 0 ; j<pseudoList.size();j++)
 			if(pseudoStep.get(tempInt).getString().equals(pseudoList.get(j).getString()))
 			{switch(j)

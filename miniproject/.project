@@ -20,4 +20,11 @@
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Icon</name>
+			<type>2</type>
+			<location>C:/Users/ASUS/Downloads/demo-20220721T040148Z-001/demo3/src/Icon</location>
+		</link>
+	</linkedResources>
 </projectDescription>

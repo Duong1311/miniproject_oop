@@ -69,7 +69,7 @@ public class addEdgeController extends Controller{
 	     		else {
 	     			hasPressFirstButton=false;
 	     			secondButton=(Button) e.getTarget();
-	     			System.out.println("Run");
+	     			System.out.println("Done");
 	     			
 	     			Vertex from = graph.getVertex(firstButton);
 	     			Vertex to =	graph.getVertex(secondButton);

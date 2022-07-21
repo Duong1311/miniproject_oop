@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="507.0" prefWidth="555.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.primaryGUIControler">
+<AnchorPane prefHeight="507.0" prefWidth="555.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.primaryGUIControler">
    <children>
       
       <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" onAction="#AddVertex" prefHeight="25.0" prefWidth="82.0" text="Add Vertex" />
       <Button layoutX="14.0" layoutY="71.0" mnemonicParsing="false" onAction="#AddEdge" prefHeight="25.0" prefWidth="82.0" text="Add Edge" />
       <Button layoutX="14.0" layoutY="108.0" mnemonicParsing="false" onAction="#TopoSort" prefHeight="25.0" prefWidth="82.0" text="TopoSort" />
-      <Button layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#Bipartite" prefHeight="25.0" prefWidth="82.0" text="Bipartite" />
+      <Button layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#BiparTitle" prefHeight="25.0" prefWidth="82.0" text="BirparTitle" />
       <Button layoutX="14.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="TwoSat" />
    </children>
 </AnchorPane>

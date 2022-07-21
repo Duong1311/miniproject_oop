@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 
 
@@ -26,7 +27,10 @@ public class primaryGui  extends Application {
 			FXMLLoader loader= new FXMLLoader(getClass().getResource("PrimaryStage.fxml"));
 			Parent root = loader.load();
 			Scene scene1 = new Scene(root);
+		
 			scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.getIcons().add(new Image("https://png.pngtree.com/element_our/png_detail/20180904/modern-icon-solution-letter-g-png_83370.jpg"));
+		  	primaryStage.setTitle("Graph Traversal");
 			primaryStage.setScene(scene1);
 			primaryStage.show();
 		} catch(Exception e) {

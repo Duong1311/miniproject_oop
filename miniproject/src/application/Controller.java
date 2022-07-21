@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 
 public class Controller {
 	@FXML
-	Algorithm algorithm;
+	
 	Graph graph = new Graph();
 	@FXML
 	Stage stage;
@@ -43,6 +43,7 @@ public class Controller {
 		scene = new Scene(root);
 	
 		showGraph(( AnchorPane)root,graph);
+		stage.setTitle("Graph Traversal");
 		stage.setScene(scene);
 		stage.show(); 
 	}
@@ -188,7 +189,6 @@ public class Controller {
 			            "-fx-background-color: cyan; "
 			    );
 	 			break;
-	 			
 	 		case 2:
 	 			button.setStyle(
 						"-fx-background-radius: 15em; " +
@@ -221,8 +221,19 @@ public class Controller {
 					            "-fx-text-fill: Gray;"+
 					            "-fx-background-color: orange; "
 			    );
+	 		case -2:
+	 			button.setStyle(
+						"-fx-background-radius: 15em; " +
+					            "-fx-min-width: 30px; " +
+					            "-fx-min-height: 30px; " +
+					            "-fx-max-width: 30px; " +
+					            "-fx-max-height: 30px;" +
+					            "-fx-text-fill: Gray;"+
+					            "-fx-background-color: yellow; "
+			    );
 	 		}
 	 	}
+	 	
 	 	public void changeColor(Line line,int status)
 	 	{
 	 		switch(status) {
